@@ -15,13 +15,17 @@ public class Controller {
 	
 	public static void loadMovingViolations() {
 		
+		manager.loadMovingViolations("Moving_Violations_Issued_in_January.csv");
 	}
 	
 	public static LinkedList <VOMovingViolations> getMovingViolationsByViolationCode (String violationCode) {
-		return null;
+		
+		return manager.getMovingViolationsByViolationCode(violationCode);
+
+		
 	}
 	
 	public static LinkedList <VOMovingViolations> getMovingViolationsByAccident(String accidentIndicator) {
-		return null;
+		return manager.getMovingViolationsByAccident(accidentIndicator);
 	}
 }

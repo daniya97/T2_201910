@@ -1,4 +1,6 @@
 package model.data_structures;
+import com.opencsv.CSVReader;
+
 
 /**
  * Abstract Data Type for a linked list of generic objects
@@ -7,8 +9,12 @@ package model.data_structures;
  * next, previous
  * @param <T>
  */
-public interface LinkedList<T> extends Iterable<T> {
+public interface ILinkedList<K> extends Iterable<K> {
 
-	Integer getSize();
+
+	void agregarElementoPrimeraPosicion(K pNuevo);
+	int darTamanoLista();
+	Nodo<K> darPrimerNodo();
+
 
 }

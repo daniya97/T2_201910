@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import controller.Controller;
 import model.data_structures.ILinkedList;
+import model.data_structures.LinkedList;
+import model.data_structures.Nodo;
 import model.vo.VOMovingViolations;
 
 public class MovingViolationsManagerView 
@@ -28,22 +30,43 @@ public class MovingViolationsManagerView
 					System.out.println("Ingrese el código de la infracción:");
 					String violationCode = sc.next();
 					LinkedList<VOMovingViolations> violationsByCodeList = Controller.getMovingViolationsByViolationCode (violationCode);
-					System.out.println("Se encontraron "+ violationsByCodeList.getSize() + " elementos");
-					for (VOMovingViolations violations : violationsByCodeList) 
+					
+
+					Nodo<VOMovingViolations> actual = violationsByCodeList.darPrimerNodo();
+					
+					while(actual != null)
 					{
-						System.out.println(violations.objectId() + " " + violations.getLocation() + " " + violations.getTicketIssueDate()+ " " + violations.getTotalPaid() + " " + violations.getAccidentIndicator()+ " " + violations.getViolationDescription());;
+						
+						VOMovingViolations contador = actual.darObjeto();	
+						if(contador!=null){
+						System.out.println(contador.getViolationCode()+contador.objectId() + " " + contador.getLocation() + " " + contador.getTicketIssueDate()+ " " + contador.getTotalPaid() + " " + contador.getAccidentIndicator()+ " " + contador.getViolationDescription());
+						}
+						actual = actual.darSiguiente();
+						
 					}
+					System.out.println("Se encontraron "+ violationsByCodeList.darTamanoLista() + " elementos");
 					break;
 					
 				case 3:
 					System.out.println("Ingrese el indicador de Accidente que quiere consulta (No/Yes):");
 					String accidentIndicator = sc.next();
 					LinkedList<VOMovingViolations> violationsByAccidentsList = Controller.getMovingViolationsByAccident (accidentIndicator);
-					System.out.println("Se encontraron "+ violationsByAccidentsList.getSize() + " elementos");
-					for (VOMovingViolations violations : violationsByAccidentsList) 
+					
+
+					Nodo<VOMovingViolations> actual2 = violationsByAccidentsList.darPrimerNodo();
+					
+					while(actual2 != null)
 					{
-						System.out.println(violations.objectId() + " " + violations.getLocation() + " " + violations.getTicketIssueDate()+ " " + violations.getTotalPaid() + " " + violations.getAccidentIndicator()+ " " + violations.getViolationDescription());;
+						
+						VOMovingViolations contador = actual2.darObjeto();	
+						if(contador!=null){
+						System.out.println(contador.objectId() + " " + contador.getLocation() + " " + contador.getTicketIssueDate()+ " " + contador.getTotalPaid() + " " + contador.getAccidentIndicator()+ " " + contador.getViolationDescription());
+						}
+						actual2 = actual2.darSiguiente();
+						
 					}
+					System.out.println("Se encontraron "+ violationsByAccidentsList.darTamanoLista() + " elementos");
+					
 					break;
 											
 				case 4:	
