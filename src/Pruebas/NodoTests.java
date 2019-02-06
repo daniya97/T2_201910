@@ -3,9 +3,14 @@ package Pruebas;
 import junit.framework.TestCase;
 import model.data_structures.Nodo;
 
+/**
+ * Clase para probar  las funciones de los nodos
+ */
 public class NodoTests extends TestCase {
 	
-	
+	/**
+	 * Se prueban diferentes tipos de nodos aprobando la genoricidad
+	 */
 	private  Nodo<String> prueba;
 	private Nodo<Integer> prueba2;
 	private Nodo<Integer> prueba3;
@@ -28,6 +33,9 @@ public class NodoTests extends TestCase {
 		}
 		
 	}
+	/**
+	 * Se prueban las funcionalidades con STRINGS
+	 */
 	
 	public void testConStrings()
 	{
@@ -38,7 +46,9 @@ public class NodoTests extends TestCase {
 		
 		
 	}
-	
+	/**
+	 * Se prueban las funcionalidades con	INTEGER
+	 */
 	public void testConIntegers()
 	{
 		setUpEscenario2( );

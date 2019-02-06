@@ -2,14 +2,18 @@ package Pruebas;
 
 import junit.framework.TestCase;
 import model.data_structures.LinkedList;
-
+/**
+ * Prueba las principales funciones de la lista encadenada
+ */
 public class LinkedListTest extends TestCase {
 
 
 	private LinkedList<String> linkedList;
 
 
-
+	/**
+	 * Se crea el escenario 1
+	 */
 	private void setUpEscenario1(){
 		linkedList = new LinkedList<String>(null);
 
@@ -26,7 +30,9 @@ public class LinkedListTest extends TestCase {
 
 	}
 	
-	
+	/**
+	 * Se crea el escenario 2
+	 */
 	private void setUpEscenario2(){
 		linkedList = new LinkedList<String>(null);
 
@@ -45,6 +51,9 @@ public class LinkedListTest extends TestCase {
 
 	}
 	
+	/**
+	 * Se crea el escenario 3
+	 */
 	private void setUpEscenario3(){
 		linkedList = new LinkedList<String>(null);
 
@@ -85,8 +94,10 @@ public class LinkedListTest extends TestCase {
 
 	}
 
-
-
+	
+	/**
+	 * Se agregan elementos y se pide el tamaño
+	 */
 	public void testLinkedListAgregaryTamano()
 	{
 		setUpEscenario1();
@@ -96,7 +107,9 @@ public class LinkedListTest extends TestCase {
 
 	}
 	
-
+	/**
+	 * Se agregan elementos y se pide el tamaño
+	 */
 	public void testLinkedListAgregaryTamano2()
 	{
 		setUpEscenario2();
@@ -106,6 +119,10 @@ public class LinkedListTest extends TestCase {
 
 	}
 	
+	
+	/**
+	 * Se determina el tamaño de una lita con varios elementos
+	 */
 	public void testLinkedListTamano()
 	{
 		setUpEscenario3();

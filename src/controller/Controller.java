@@ -4,7 +4,9 @@ import api.IMovingViolationsManager;
 import model.data_structures.LinkedList;
 import model.logic.MovingViolationsManager;
 import model.vo.VOMovingViolations;
-
+/**
+ * Controlador de la estructura de datos
+ */
 public class Controller {
 
 	/**
@@ -15,7 +17,7 @@ public class Controller {
 	
 	public static void loadMovingViolations() {
 		
-		manager.loadMovingViolations("Moving_Violations_Issued_in_January.csv");
+		manager.loadMovingViolations("Moving_Violations_Issued_in_January_2018 (4).csv");
 	}
 	
 	public static LinkedList <VOMovingViolations> getMovingViolationsByViolationCode (String violationCode) {

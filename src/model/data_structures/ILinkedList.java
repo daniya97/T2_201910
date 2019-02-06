@@ -10,7 +10,9 @@ import com.opencsv.CSVReader;
  * @param <T>
  */
 public interface ILinkedList<K> extends Iterable<K> {
-
+	/**
+	 * Métodos que debe tener la lista encadenada para cumplir con los requisitos
+	 */
 
 	void agregarElementoPrimeraPosicion(K pNuevo);
 	int darTamanoLista();

@@ -23,10 +23,13 @@ public class MovingViolationsManagerView
 			switch(option)
 			{
 				case 1:
+					
+					//Se cargan los datos
 					Controller.loadMovingViolations();
 					break;
 					
 				case 2:
+					//Se busca las infracciones por el código
 					System.out.println("Ingrese el código de la infracción:");
 					String violationCode = sc.next();
 					LinkedList<VOMovingViolations> violationsByCodeList = Controller.getMovingViolationsByViolationCode (violationCode);
@@ -39,7 +42,7 @@ public class MovingViolationsManagerView
 						
 						VOMovingViolations contador = actual.darObjeto();	
 						if(contador!=null){
-						System.out.println(contador.getViolationCode()+contador.objectId() + " " + contador.getLocation() + " " + contador.getTicketIssueDate()+ " " + contador.getTotalPaid() + " " + contador.getAccidentIndicator()+ " " + contador.getViolationDescription());
+						System.out.println(contador.objectId() + " " + contador.getLocation() + " " + contador.getTicketIssueDate()+ " " + contador.getTotalPaid() + " " + contador.getAccidentIndicator()+ " " + contador.getViolationDescription());
 						}
 						actual = actual.darSiguiente();
 						
@@ -48,6 +51,8 @@ public class MovingViolationsManagerView
 					break;
 					
 				case 3:
+					
+					// Se buscan las infracciones por el indicador
 					System.out.println("Ingrese el indicador de Accidente que quiere consulta (No/Yes):");
 					String accidentIndicator = sc.next();
 					LinkedList<VOMovingViolations> violationsByAccidentsList = Controller.getMovingViolationsByAccident (accidentIndicator);
@@ -70,6 +75,8 @@ public class MovingViolationsManagerView
 					break;
 											
 				case 4:	
+					
+					/// Cualquier otro caso
 					fin=true;
 					sc.close();
 					break;
@@ -77,6 +84,8 @@ public class MovingViolationsManagerView
 		}
 	}
 
+	
+	// Menu prinicipal
 	private static void printMenu() {
 		System.out.println("---------ISIS 1206 - Estructuras de datos----------");
 		System.out.println("---------------------Taller 2----------------------");

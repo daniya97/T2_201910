@@ -1,12 +1,20 @@
 package model.data_structures;
 
 import java.util.Iterator;
-
+/**
+ * Lista encadenada implementa ILinkedList
+ */
 public class LinkedList <K> implements ILinkedList<K>{
 	
+	
+	/**
+	 * Guarda el primer nodo
+	 */
 	private Nodo<K> primero;
 	
-	
+	/**
+	 * Constructor
+	 */
 	public LinkedList(K primerNodo) {
 		primero = new Nodo<>(primerNodo);
 	}
@@ -17,6 +25,10 @@ public class LinkedList <K> implements ILinkedList<K>{
 		return null;
 	}
 
+	
+	/**
+	 * Se agregan elementos en la primera posición pues es más eficiente
+	 */
 	@Override
 	public void agregarElementoPrimeraPosicion(K pNuevo){
 		
@@ -36,6 +48,9 @@ public class LinkedList <K> implements ILinkedList<K>{
 	}
 	
 
+	/**
+	 * Se obtienen el tamaño de la lista
+	 */
 	@Override
 	public int darTamanoLista() {
 	
@@ -52,7 +67,9 @@ public class LinkedList <K> implements ILinkedList<K>{
 	}
 
 
-
+	/**
+	 * Se obtiene el primer nodo
+	 */
 	@Override
 	public Nodo<K> darPrimerNodo() {
 		return primero;
